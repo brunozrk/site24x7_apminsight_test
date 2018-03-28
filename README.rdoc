@@ -1,0 +1,69 @@
+APM Insight Ruby Agent
+	Applications Manager's Ruby agent gives you end-to-end web-transaction awareness enabling you to isolate performance issues and resolve them quickly.Applications Manager requires a monitoring agent (ruby gem) to be deployed in your application server to monitor Ruby application performance. Download the latest Ruby Agent(apminsight.gem) and deploy it in your application server. The agent collects application performance metrics and sends it to the central Applications Manager server at fixed intervals i.e. every 60 seconds.
+ 
+Installing APM Insight Agent
+
+	Ruby Agent installation can be done in two ways:
+
+    	* Install from RubyGems by using the following command in the system where Ruby is installed : 
+		
+			gem install apminsight
+    				
+			OR
+
+	    * Download the apminsight.gem file directly from our website or the RubyGems website and run the command 
+		
+			gem install apminsight.gem
+
+Configuration
+
+	After installation of the gem:
+
+    	For each of your applications, add the following line to the application gemfile:
+
+        	gem 'apminsight'
+		
+				OR
+
+    	For each of your applications, add the following line to the application initializer block:
+
+        	require 'apminsight'
+
+	A copy of the configuration file apminsight.conf will be available in the <Gem Installed folder> /apminsight/conf/. Configure the class name in the configuration file(include.packages), so that all the methods in that class can be instrumented and details will be reported in tracedata.
+ 
+
+The following configuration options are mandatory and should be provided for the agent to be initialized:
+
+    application.name - The application's name to be displayed in Applications Manager.
+
+    apm.host - The host where Applications Manager is running.
+
+    apm.port - The HTTP port of Applications Manager.
+
+    behind.proxy - The proxy network under which the agent is installed
+
+    agent.server.port - The HTTP listening port of the Application Server.
+
+More configuration options of APM Insight Ruby Agent can be found here.
+ 
+Supported Environments :
+
+    Ruby - 1.8.7 and higher
+
+    Rails - 3.0 and higher
+
+References
+
+	* Download link for Applications Manager
+
+		http://www.manageengine.com/products/applications_manager/
+
+	* Download link for apminsight 
+
+		http://www.manageengine.com/products/applications_manager/
+		http://rubygems.org/gems/apminsight
+
+	* Help Documentation for apminsight
+
+		http://www.manageengine.com/products/applications_manager/help/APMInsight/installing-transaction-agent.html
+		
